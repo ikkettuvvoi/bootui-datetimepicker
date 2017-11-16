@@ -2,24 +2,25 @@
 namespace bootui\datetimepicker;
 
 /**
- * Datepicker widgets
+ * DateTimepicker widgets
+ * 
  * 
  * ~~~
  * [php]
  * <?php
  * 
  * 
- * echo Datepicker::widget([
- * 	'name' => 'date',
+ * echo DateTimepicker::widget([
+ * 	'name' => 'datetime',
  * 	'options' => ['class' => 'form-control'],
- * 	'addon' => ['prepend' => 'Birth Date'],
- * 	'format' => 'YYYY-MM-DD',
+ * 	'addon' => ['prepend' => 'Date and Time'],
+ * 	'format' => 'YYYY-MM-DD HH:mm',
  * ]);
  * 
- * echo $form->field($model, 'attribute')->widget(Datepicker::className(), [ 
+ * echo $form->field($model, 'attribute')->widget(Timepicker::className(), [ 
  * 	'options' => ['class' => 'form-control'],
- * 	'addon' => ['prepend' => 'Birth Date'],
- * 	'format' => 'YYYY-MM-DD',
+ * 	'addon' => ['prepend' => 'Date and Time'],
+ * 	'format' => 'YYYY-MM-DD HH:mm',
  * ]);
  * ~~~
  * 
@@ -29,13 +30,14 @@ namespace bootui\datetimepicker;
  * @since 1
  *
  */
-class Datepicker extends BasePicker
+class DateTimepicker extends BasePicker
 {	
 	public function init()
 	{
 		$this->pick['date'] = true;
+		$this->pick['time'] = true;
 		parent::init();
 		if (!isset($this->clientOptions['format']))
-			$this->clientOptions['format'] = "YYYY-MM-DD";
+			$this->clientOptions['format'] = "YYYY-MM-DD HH:mm";
 	}
 }
