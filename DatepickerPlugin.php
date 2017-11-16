@@ -17,7 +17,7 @@ class DatepickerPlugin extends AssetBundle
 	];
 	
 	public $js = [
-		'js/moment.js',
+	//	'js/moment.js',
 		'js/bootstrap-datetimepicker.js',
 	];
 	
